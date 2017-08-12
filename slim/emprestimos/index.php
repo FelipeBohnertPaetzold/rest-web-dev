@@ -12,6 +12,8 @@ include_once './Livro.php';
 include_once './LivroController.php';
 include_once './Aluno.php';
 include_once './AlunoController.php';
+include_once './Emprestimo.php';
+include_once './EmprestimoController.php';
 
 $config = [
     'settings' => [
@@ -59,6 +61,14 @@ $app->group("/aluno", function() {
     $this->post("/", "AlunoController:adicionar");
     $this->put("/{id}", "AlunoController:alterar");
     $this->delete("/{id}", "AlunoController:excluir");
+});
+
+$app->group("/emprestimo", function() {
+    $this->get("/", "EmprestimoController:lista");
+    $this->get("/{id}", "EmprestimoController:buscar");
+    $this->post("/", "EmprestimoController:adicionar");
+    $this->put("/{id}", "EmprestimoController:alterar");
+    $this->delete("/{id}", "EmprestimoController:excluir");
 });
 
 //$app->group("/cliente", function() {
