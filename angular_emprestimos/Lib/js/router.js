@@ -51,6 +51,20 @@ angular.module('ExemploApp')
                         templateUrl: 'View/CursoForm.html',
                         controller: 'CursoFormController'
                     })
+                    //==================================================================
+                    //Aluno
+                    .when('/Aluno/list', {
+                        templateUrl: 'View/AlunoList.html',
+                        controller: 'AlunoListController'
+                    })
+                    .when('/Aluno/create', {
+                        templateUrl: 'View/AlunoForm.html',
+                        controller: 'AlunoFormController'
+                    })
+                    .when('/Aluno/edit/:id', {
+                        templateUrl: 'View/AlunoForm.html',
+                        controller: 'AlunoFormController'
+                    })
                     
                     //CLIENTE
                     .when('/Cliente/list', {
