@@ -37,6 +37,20 @@ angular.module('ExemploApp')
                         templateUrl: 'View/AutorForm.html',
                         controller: 'AutorFormController'
                     })
+                    //==================================================================
+                    //Curso
+                    .when('/Curso/list', {
+                        templateUrl: 'View/CursoList.html',
+                        controller: 'CursoListController'
+                    })
+                    .when('/Curso/create', {
+                        templateUrl: 'View/CursoForm.html',
+                        controller: 'CursoFormController'
+                    })
+                    .when('/Curso/edit/:id', {
+                        templateUrl: 'View/CursoForm.html',
+                        controller: 'CursoFormController'
+                    })
                     
                     //CLIENTE
                     .when('/Cliente/list', {
