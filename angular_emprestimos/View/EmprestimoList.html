@@ -1,0 +1,45 @@
+<div class="container" ng-init="init()">
+
+    <form id="form" name='form'>     
+
+        <h3><i class="glyphicon glyphicon-th-list"></i> Lista de Emprestimos </h3>
+        <hr>
+        <div class="row">
+            <div class="form-group col-lg-12 col-sm-12">
+                <a href="#Emprestimo/create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo </a>
+            </div>
+        </div> 
+        <div class="table-responsive">
+            <table class="table table-hover" id="tableList">
+                <thead>
+                    <tr>            
+                        <th class="col-md-1 text-center hidden-xs">ID</th>
+                        <th class="col-md-4">Aluno</th>
+                        <th class="col-md-4">Livro</th>
+                        <th class="col-md-4">Data</th>
+                        <th class="col-md-4">Previsão</th>
+                        <th class="col-md-4">Devolução</th>
+                        <th class="col-md-4">Multa</th>
+                        <th class="col-md-1 text-center">Ações</th>              
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emprestimo in emprestimos">
+                        <td class="text-center hidden-xs">{{emprestimo.id}}</td>
+                        <td>{{emprestimo.aluno.nome}}</td>
+                        <td>{{emprestimo.livro.nome}}</td>
+                        <td>{{emprestimo.dataEmprestimo}}</td>
+                        <td>{{emprestimo.dataPrevista}}</td>
+                        <td>{{emprestimo.dataDevolucao}}</td>
+                        <td>{{emprestimo.multa}}</td>
+                        <td class="text-right" nowrap>
+                            <button type="button" class="btn btn-warning btn-sm" title="Editar" ng-click="edit(emprestimo.id)" ng-disabled="loading"><i class="glyphicon glyphicon-edit"></i> </button>
+                            <button type="button" class="btn btn-danger btn-sm" title="Excluir" ng-click="remove(emprestimo.id)" ng-disabled="loading"><i class="glyphicon glyphicon-trash"></i> </button>
+                        </td>         
+                    </tr>
+                </tbody>
+            </table>  
+        </div>
+</div>
+
+

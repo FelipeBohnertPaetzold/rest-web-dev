@@ -1,0 +1,61 @@
+
+<div class="container" ng-init="init()">
+
+    <form id="form" name="form">     
+
+        <h3><i class="glyphicon glyphicon-pencil"></i> Cadastro de Emprestimo</h3>
+        <hr>
+
+        <div class="row">
+            <div class="form-group col-sm-2">
+                <label>Código</label>
+                <input ng-model="emprestimo.id" type="text" class="form-control" ng-disabled="true">
+            </div>
+        </div>    
+
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label>Data Emprestimo</label>
+                <input ng-model="emprestimo.dataEmprestimo" name="nome" required type="date" class="form-control">
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Data Prevista</label>
+                <input ng-model="emprestimo.dataPrevista" name="nome" required type="date" class="form-control">
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Data Devolução</label>
+                <input ng-model="emprestimo.dataDevolucao" ng-disabled="!emprestimo.id" name="nome" required type="datetime-local" class="form-control">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Multa</label>
+                <input ng-model="emprestimo.multa" ng-disabled="!emprestimo.id" name="publicacao" required type="text" class="form-control" placeholder="Digite a publicação">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Livro</label>
+                <select ng-model="emprestimo.livro" name="livro" required class="form-control" ng-options="l.nome for l in livros track by l.id">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Aluno</label>
+                <select ng-model="emprestimo.aluno" name="Aluno" required class="form-control" ng-options="a.nome for a in alunos track by a.id">
+                </select>
+            </div>
+        </div>
+
+        <div class="row pull-right">
+            <div class="form-group col-lg-12 col-sm-12">          
+                <button type="submit" ng-click="save()" class="btn btn-success" ng-disabled="loading"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+                <a href="#Emprestimo/list" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div> 
+    </form>
+
+</div>

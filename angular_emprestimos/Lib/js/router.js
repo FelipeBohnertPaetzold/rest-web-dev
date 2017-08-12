@@ -79,58 +79,21 @@ angular.module('ExemploApp')
                         templateUrl: 'View/LivroForm.html',
                         controller: 'LivroFormController'
                     })
+                    //==================================================================
+                    //Emprestimo
+                    .when('/Emprestimo/list', {
+                        templateUrl: 'View/EmprestimoList.html',
+                        controller: 'EmprestimoListController'
+                    })
+                    .when('/Emprestimo/create', {
+                        templateUrl: 'View/EmprestimoForm.html',
+                        controller: 'EmprestimoFormController'
+                    })
+                    .when('/Emprestimo/edit/:id', {
+                        templateUrl: 'View/EmprestimoForm.html',
+                        controller: 'EmprestimoFormController'
+                    })
                     
-                    
-                    //CLIENTE
-                    .when('/Cliente/list', {
-                        templateUrl: 'View/ClienteList.html',
-                        controller: 'ClienteListController'
-                    })
-                    .when('/Cliente/create', {
-                        templateUrl: 'View/ClienteForm.html',
-                        controller: 'ClienteFormController'
-                    })
-                    .when('/Cliente/edit/:id', {
-                        templateUrl: 'View/ClienteForm.html',
-                        controller: 'ClienteFormController'
-                    })
-
-                    //==================================================================
-                    //AGÊNCIA
-                    .when('/Agencia/list', {
-                        templateUrl: 'View/AgenciaList.html',
-                        controller: 'AgenciaListController'
-                    })
-                    .when('/Agencia/create', {
-                        templateUrl: 'View/AgenciaForm.html',
-                        controller: 'AgenciaFormController'
-                    })
-                    .when('/Agencia/edit/:id', {
-                        templateUrl: 'View/AgenciaForm.html',
-                        controller: 'AgenciaFormController'
-                    })
-
-                    //==================================================================
-                    //CONTA
-                    .when('/Conta/list', {
-                        templateUrl: 'View/ContaList.html',
-                        controller: 'ContaListController'
-                    })
-                    .when('/Conta/create', {
-                        templateUrl: 'View/ContaForm.html',
-                        controller: 'ContaFormController'
-                    })
-                    .when('/Conta/edit/:id', {
-                        templateUrl: 'View/ContaForm.html',
-                        controller: 'ContaFormController'
-                    })
-
-                    //==================================================================
-                    //OPERAÇÕES
-                    .when('/Operacao/:operacao/:id', {
-                        templateUrl: 'View/ContaOperacaoForm.html',
-                        controller: 'OperacaoFormController'
-                    })
 
 
 
