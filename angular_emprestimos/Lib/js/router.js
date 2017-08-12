@@ -24,6 +24,20 @@ angular.module('ExemploApp')
                     })
 
                     //==================================================================
+                    //Autor
+                    .when('/Autor/list', {
+                        templateUrl: 'View/AutorList.html',
+                        controller: 'AutorListController'
+                    })
+                    .when('/Autor/create', {
+                        templateUrl: 'View/AutorForm.html',
+                        controller: 'AutorFormController'
+                    })
+                    .when('/Autor/edit/:id', {
+                        templateUrl: 'View/AutorForm.html',
+                        controller: 'AutorFormController'
+                    })
+                    
                     //CLIENTE
                     .when('/Cliente/list', {
                         templateUrl: 'View/ClienteList.html',
