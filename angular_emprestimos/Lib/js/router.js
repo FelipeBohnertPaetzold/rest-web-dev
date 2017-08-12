@@ -65,6 +65,21 @@ angular.module('ExemploApp')
                         templateUrl: 'View/AlunoForm.html',
                         controller: 'AlunoFormController'
                     })
+                    //==================================================================
+                    //Livro
+                    .when('/Livro/list', {
+                        templateUrl: 'View/LivroList.html',
+                        controller: 'LivroListController'
+                    })
+                    .when('/Livro/create', {
+                        templateUrl: 'View/LivroForm.html',
+                        controller: 'LivroFormController'
+                    })
+                    .when('/Livro/edit/:id', {
+                        templateUrl: 'View/LivroForm.html',
+                        controller: 'LivroFormController'
+                    })
+                    
                     
                     //CLIENTE
                     .when('/Cliente/list', {

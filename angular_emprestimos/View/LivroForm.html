@@ -1,0 +1,65 @@
+
+<div class="container" ng-init="init()">
+
+    <form id="form" name="form">     
+
+        <h3><i class="glyphicon glyphicon-pencil"></i> Cadastro de Livro</h3>
+        <hr>
+
+        <div class="alert alert-warning" ng-show="form.$invalid && submitted">
+            <strong>Atenção</strong>
+            <li ng-show="form.nome.$error.required">Campo <strong>Nome</strong> é obrigatório!</li>            
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-2">
+                <label>Código</label>
+                <input ng-model="livro.id" type="text" class="form-control" ng-disabled="true">
+            </div>
+        </div>    
+
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Nome</label>
+                <input ng-model="livro.nome" name="nome" required type="text" class="form-control" placeholder="Digite o nome para o livro">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Publicação</label>
+                <input ng-model="livro.publicacao" name="publicacao" required type="text" class="form-control" placeholder="Digite a publicação">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Edição</label>
+                <input ng-model="livro.edicao" name="edicao" required type="text" class="form-control" placeholder="Digite a edição">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Editora</label>
+                <select ng-model="livro.editora" name="editora" required class="form-control" ng-options="e.nome for e in editoras track by e.id">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label>Autor</label>
+                <select ng-model="livro.autor" name="Autor" required class="form-control" ng-options="a.nome for a in autores track by a.id">
+                </select>
+            </div>
+        </div>
+
+        <div class="row pull-right">
+            <div class="form-group col-lg-12 col-sm-12">          
+                <button type="submit" ng-click="save()" class="btn btn-success" ng-disabled="loading"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+                <a href="#Livro/list" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div> 
+    </form>
+
+</div>

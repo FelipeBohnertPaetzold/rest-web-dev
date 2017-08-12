@@ -1,0 +1,43 @@
+<div class="container" ng-init="init()">
+
+    <form id="form" name='form'>     
+
+        <h3><i class="glyphicon glyphicon-th-list"></i> Lista de Livros </h3>
+        <hr>
+        <div class="row">
+            <div class="form-group col-lg-12 col-sm-12">
+                <a href="#Livro/create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo </a>
+            </div>
+        </div> 
+        <div class="table-responsive">
+            <table class="table table-hover" id="tableList">
+                <thead>
+                    <tr>            
+                        <th class="col-md-1 text-center hidden-xs">ID</th>
+                        <th class="col-md-4">Nome</th>
+                        <th class="col-md-4">Publicação</th>
+                        <th class="col-md-4">Edição</th>
+                        <th class="col-md-4">Autor</th>
+                        <th class="col-md-4">Editora</th>
+                        <th class="col-md-1 text-center">Ações</th>              
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="livro in livros">
+                        <td class="text-center hidden-xs">{{livro.id}}</td>
+                        <td>{{livro.nome}}</td>
+                        <td>{{livro.publicacao}}</td>
+                        <td>{{livro.edicao}}</td>
+                        <td>{{livro.autor.nome}}</td>
+                        <td>{{livro.editora.nome}}</td>
+                        <td class="text-right" nowrap>
+                            <button type="button" class="btn btn-warning btn-sm" title="Editar" ng-click="edit(livro.id)" ng-disabled="loading"><i class="glyphicon glyphicon-edit"></i> </button>
+                            <button type="button" class="btn btn-danger btn-sm" title="Excluir" ng-click="remove(livro.id)" ng-disabled="loading"><i class="glyphicon glyphicon-trash"></i> </button>
+                        </td>         
+                    </tr>
+                </tbody>
+            </table>  
+        </div>
+</div>
+
+
