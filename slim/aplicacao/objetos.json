@@ -1,0 +1,82 @@
+http://localhost/Rest2017/slim/aplicacao/cliente/
+POST
+
+{
+	"nome" 	: "Luiz Henrique",
+	"cpf"	: "11122233344"
+}
+
+
+http://localhost/Rest2017/slim/aplicacao/agencia/
+POST
+
+{
+	"nome" : "Centro",
+	"banco" : {
+	    "id": 1,
+	    "nome": "Itau"
+	}
+}
+
+http://localhost/Rest2017/slim/aplicacao/conta/
+POST
+{
+	"cliente" : {
+        "id": 1,
+        "nome": "Luiz Henrique",
+        "cpf": "11122233344"
+    },
+    "agencia" : {
+        "id": 1,
+        "nome": "Centro",
+        "banco": {
+            "id": 1,
+            "nome": "Itau"
+        }
+    },
+    "limite" : 100
+}
+
+
+http://localhost/Rest2017/slim/aplicacao/conta/1
+PUT
+{	
+    "agencia" : {
+        "id": 1,
+        "nome": "Centro",
+        "banco": {
+            "id": 1,
+            "nome": "Itau"
+        }
+    },
+    "limite" : 200,
+    "situacao" : "A"
+}
+
+
+
+http://localhost/Rest2017/slim/aplicacao/operacao/
+POST
+{
+    "conta" : {
+    	"id": 1
+    },
+    "tipo" : "C",
+    "valor" : 10.00
+}
+
+{
+    "conta" : {
+    	"id": 1
+    },
+    "tipo" : "D",
+    "valor" : 10.00
+}
+
+
+http://localhost/Rest2017/slim/aplicacao/login/
+POST
+{
+    "usuario" : "admin",
+    "senha"   : "admin"
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "nome": "Luiz",
+        "idade": 22,
+        "email": "luiz@unicesumar.edu.br"
+    },
+    {
+        "id": 2,
+        "nome": "Maria",
+        "idade": 30,
+        "email": "maria@unicesumar.edu.br"
+    }
+]

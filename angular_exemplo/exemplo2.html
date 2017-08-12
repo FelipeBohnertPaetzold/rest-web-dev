@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-controller="loopController">
+        <ul>
+            <li ng-repeat="fruta in frutas">{{fruta}}</li>
+        </ul>
+        
+        <ul>
+            <li ng-repeat="cliente in clientes">{{cliente.id}} - {{cliente.nome}}</li>
+        </ul>
+    </body>
+</html>
+
+<script type="text/javaScript">
+
+    var app = angular.module('app', []);
+    
+    app.controller('loopController', function ($scope) {
+        $scope.frutas = ['banana','maça','laranja'];
+        
+        $scope.clientes = [
+            {"id" : 1, "nome" : "Luiz", "cpf" : "111.222.333-44"},
+            {"id" : 2, "nome" : "Maria", "cpf" : "111.222.333-44"},
+            {"id" : 3, "nome" : "Carlos", "cpf" : "111.222.333-44"}
+        ];
+        
+    });
+
+</script>

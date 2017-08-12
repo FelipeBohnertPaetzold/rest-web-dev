@@ -1,0 +1,8 @@
+{
+    "require": {
+        "firebase/php-jwt": "*",
+        "slim/slim": "3.x",
+        "doctrine/orm": "2.5.*",
+        "apidoc/apidoc" : "dev-master"
+    }
+}
