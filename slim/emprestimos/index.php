@@ -10,6 +10,8 @@ include_once './Editora.php';
 include_once './EditoraController.php';
 include_once './Livro.php';
 include_once './LivroController.php';
+include_once './Aluno.php';
+include_once './AlunoController.php';
 
 $config = [
     'settings' => [
@@ -49,6 +51,14 @@ $app->group("/livro", function() {
     $this->post("/", "LivroController:adicionar");
     $this->put("/{id}", "LivroController:alterar");
     $this->delete("/{id}", "LivroController:excluir");
+});
+
+$app->group("/aluno", function() {
+    $this->get("/", "AlunoController:lista");
+    $this->get("/{id}", "AlunoController:buscar");
+    $this->post("/", "AlunoController:adicionar");
+    $this->put("/{id}", "AlunoController:alterar");
+    $this->delete("/{id}", "AlunoController:excluir");
 });
 
 //$app->group("/cliente", function() {
